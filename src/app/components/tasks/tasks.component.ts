@@ -7,13 +7,20 @@ import { Task } from 'src/app/Task';
   templateUrl: './tasks.component.html',
   styleUrls: ['./tasks.component.css'],
 })
-export class TasksComponent implements OnInit{
+export class TasksComponent implements OnInit {
   tasks: Task[] = [];
 
   constructor(private taskservice: TaskService) {}
 
   ngOnInit(): void {
-      this.taskservice.getTasks().subscribe((tasks) => (this.tasks = tasks))
+    this.taskservice.getTasks().subscribe((tasks) => (this.tasks = tasks));
   }
 
+  deleteTask(task: Task) {
+    this.taskservice
+      .deleteTask(task)
+      .subscribe(
+        () => (this.tasks = this.tasks.filter((t) => t.id !== task.id))
+      );
+  }
 }

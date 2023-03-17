@@ -11,6 +11,7 @@ import { TasksComponent } from './components/tasks/tasks.component';
 import { TaskItemComponent } from './components/task-item/task-item.component';
 import { AddTaskComponent } from './components/add-task/add-task.component'
 import { RouterModule, Routes } from '@angular/router';
+import { AboutComponent } from './components/about/about.component';
 
 const appRoutes: Routes = [
   {path: '', component: TasksComponent}
@@ -23,7 +24,8 @@ const appRoutes: Routes = [
     ButtonComponent,
     TasksComponent,
     TaskItemComponent,
-    AddTaskComponent
+    AddTaskComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
